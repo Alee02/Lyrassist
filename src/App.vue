@@ -1,32 +1,58 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <main class="flexbox">
+      <Home></Home>
+    </main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Home from './views/Home'
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  components: {
+    Home
+  },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  data: () => ({
+    //
+  })
 }
+</script>
+
+<style scoped>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #F3F3F3;
+  }
+  .flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 768px;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .flexbox .board {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    background-color: #313131;
+    padding: 15px;
+  }
+  .flexbox .board .card {
+    padding: 15px 25px;
+    background-color: #F3F3F3;
+    cursor: pointer;
+    margin-bottom: 15px
+  }
 </style>
